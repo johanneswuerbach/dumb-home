@@ -1,0 +1,15 @@
+[Unit]
+Description=dumb-home-sync
+Requires=docker.service
+After=docker.service
+
+[Service]
+ExecStartPre=/bin/sh -c "docker pull johanneswuerbach/git-sync-arm64:1"
+ExecStartPre=/bin/sh -c "docker inspect dh-sync >/dev/null 2>&1 && docker rm -f dh-sync || true"
+ExecStart=/bin/sh -c "docker run --name dh-sync --rm -v /tmp/git-data:/dumb-home johanneswuerbach/git-sync-arm64:1 --repo=https://github.com/johanneswuerbach/dumb-home --branch=master --wait=30"
+ExecStop=-/usr/bin/docker stop dh-sync
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
