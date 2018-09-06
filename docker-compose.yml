@@ -27,6 +27,16 @@ services:
     - grafana-data:/var/lib/grafana
     ports:
     - "3000:3000"
+  fritz-box-exporter:
+    image: johanneswuerbach/fritzbox_exporter:1
+    expose:
+    - "9133"
+  homematic-exporter:
+    image: johanneswuerbach/homematic_exporter:1
+    volumes:
+    - /dumb-home/config:/usr/src/app/config:ro
+    expose:
+    - "8000"
 
 volumes:
   prom-data:
