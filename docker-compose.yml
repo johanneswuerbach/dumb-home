@@ -35,6 +35,7 @@ services:
     image: johanneswuerbach/homematic_exporter:1
     volumes:
     - /dumb-home/config:/usr/src/app/config:ro
+    - /etc/timezone:/etc/timezone:ro
     expose:
     - "8000"
 
