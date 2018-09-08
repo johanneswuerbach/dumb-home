@@ -22,7 +22,7 @@ services:
     - --collector.filesystem.ignored-mount-points
     - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
   grafana:
-    image: grafana/grafana:5.2.4
+    image: fg2it/grafana-armhf:v5.1.4
     volumes:
     - grafana-data:/var/lib/grafana
     - ./grafana/dashboards:/var/lib/grafana/dashboards
