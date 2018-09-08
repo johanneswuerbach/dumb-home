@@ -29,7 +29,7 @@ services:
     - ./grafana/provisioning:/var/lib/grafana/provisioning
     ports:
     - "3000:3000"
-    env:
+    environment:
     - GF_PATHS_PROVISIONING=/var/lib/grafana/provisioning
   fritz-box-exporter:
     image: johanneswuerbach/fritzbox_exporter:1
