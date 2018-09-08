@@ -6,7 +6,7 @@ services:
     ports:
     - "9090:9090"
     volumes:
-    - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    - ${FULL_PATH}/prometheus.yml:/etc/prometheus/prometheus.yml
     - prom-data:/prometheus
   node-exporter:
     image: napnap75/rpi-prometheus:node_exporter-0.16.0
@@ -16,6 +16,8 @@ services:
     - /proc:/host/proc:ro
     - /sys:/host/sys:ro
     - /:/rootfs:ro
+    - /var/run/dbus:/var/run/dbus
+    - /run/systemd:/run/systemd:ro
     command:
     - '--path.procfs=/host/proc' 
     - '--path.sysfs=/host/sys'
@@ -25,8 +27,8 @@ services:
     image: fg2it/grafana-armhf:v5.1.4
     volumes:
     - grafana-data:/var/lib/grafana
-    - ./grafana/dashboards:/var/lib/grafana/dashboards
-    - ./grafana/provisioning:/var/lib/grafana/provisioning
+    - ${FULL_PATH}/grafana/dashboards:/var/lib/grafana/dashboards
+    - ${FULL_PATH}/grafana/provisioning:/var/lib/grafana/provisioning
     ports:
     - "3000:3000"
     environment:
