@@ -16,6 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
+  "id": 5,
   "links": [],
   "panels": [
     {
@@ -498,5 +499,5 @@
   "timezone": "browser",
   "title": "Heating",
   "uid": "000000005",
-  "version": 6
+  "version": 9
 }

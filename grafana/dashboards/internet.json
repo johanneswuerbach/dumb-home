@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -395,5 +396,5 @@
   "timezone": "browser",
   "title": "Internet",
   "uid": "000000006",
-  "version": 6
+  "version": 9
 }
