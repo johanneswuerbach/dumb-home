@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 6,
   "links": [],
   "panels": [
     {
@@ -26,180 +25,10 @@
       "datasource": null,
       "fill": 1,
       "gridPos": {
-        "h": 7,
+        "h": 9,
         "w": 12,
         "x": 0,
         "y": 0
-      },
-      "id": 1,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "$$hashKey": "object:904",
-          "expr": "gateway_wan_bytes_received",
-          "format": "time_series",
-          "intervalFactor": 2,
-          "metric": "gateway_wan_bytes_received",
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Received",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "decbytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 0
-      },
-      "id": 2,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gateway_wan_bytes_sent",
-          "intervalFactor": 2,
-          "metric": "gateway_wan_bytes_sent",
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Sent",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 7
       },
       "id": 3,
       "legend": {
@@ -225,17 +54,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(gateway_wan_bytes_received[5m])",
+          "$$hashKey": "object:1001",
+          "expr": "irate(gateway_wan_bytes_received[10m])",
+          "format": "time_series",
           "intervalFactor": 2,
+          "legendFormat": "received",
           "metric": "gateway_wan_bytes_received",
           "refId": "A",
           "step": 240
+        },
+        {
+          "$$hashKey": "object:1023",
+          "expr": "irate(gateway_wan_bytes_sent[10m])",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "sent",
+          "refId": "B"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Download",
+      "title": "Current download / upload",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -280,12 +120,12 @@
       "datasource": null,
       "fill": 1,
       "gridPos": {
-        "h": 7,
+        "h": 9,
         "w": 12,
         "x": 12,
-        "y": 7
+        "y": 0
       },
-      "id": 4,
+      "id": 6,
       "legend": {
         "avg": false,
         "current": false,
@@ -309,16 +149,26 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(gateway_wan_bytes_sent[5m])",
-          "intervalFactor": 2,
-          "refId": "A",
-          "step": 240
+          "$$hashKey": "object:287",
+          "expr": "sum(increase(gateway_wan_bytes_received[30d]))",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "received",
+          "refId": "A"
+        },
+        {
+          "$$hashKey": "object:676",
+          "expr": "sum(increase(gateway_wan_bytes_sent[30d]))",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "sent",
+          "refId": "B"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Upload",
+      "title": "Traffic last 30 days",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -334,7 +184,8 @@
       },
       "yaxes": [
         {
-          "format": "Bps",
+          "$$hashKey": "object:522",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -342,6 +193,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:523",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -356,6 +208,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -365,7 +218,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now/w",
     "to": "now"
   },
   "timepicker": {
@@ -396,5 +249,5 @@
   "timezone": "browser",
   "title": "Internet",
   "uid": "000000006",
-  "version": 9
+  "version": 11
 }
