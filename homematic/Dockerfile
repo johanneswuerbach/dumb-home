@@ -1,6 +1,6 @@
 FROM arm32v6/python:3.6-alpine3.7
 
-RUN apk add --no-cache git build-base
+RUN apk add --no-cache git
 
 RUN git clone https://github.com/johanneswuerbach/PrometheusSmartHome.git /usr/src/app
 
