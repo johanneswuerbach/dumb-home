@@ -16,7 +16,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 5,
   "links": [],
   "panels": [
     {
@@ -25,7 +24,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
-      "decimals": null,
+      "decimals": 1,
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -61,6 +60,7 @@
           "$$hashKey": "object:703",
           "expr": "homematicip_heating_actualtemperature_celsius",
           "format": "time_series",
+          "instant": false,
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "{{room}}",
@@ -96,6 +96,8 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:588",
+          "decimals": 1,
           "format": "celsius",
           "label": null,
           "logBase": 1,
@@ -104,6 +106,8 @@
           "show": true
         },
         {
+          "$$hashKey": "object:589",
+          "decimals": 1,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -208,6 +212,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "decimals": 0,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -239,7 +244,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "$$hashKey": "object:1096",
           "expr": "homematicip_heating_valveposition",
+          "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{room}} - {{name}}",
           "metric": "homematicip_heating_valveposition",
@@ -266,6 +273,8 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1043",
+          "decimals": 1,
           "format": "percentunit",
           "label": null,
           "logBase": 1,
@@ -274,6 +283,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1044",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -293,6 +303,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "decimals": 1,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -324,7 +335,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "$$hashKey": "object:963",
           "expr": "homematicip_heating_setpointtemperature_celsius",
+          "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{room}}",
           "metric": "homematicip_heating_setpointtemperature_celsius",
@@ -351,6 +364,8 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:991",
+          "decimals": 1,
           "format": "celsius",
           "label": null,
           "logBase": 1,
@@ -359,6 +374,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:992",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -378,6 +394,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "decimals": 0,
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -409,7 +426,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "$$hashKey": "object:1227",
           "expr": "homematicip_heating_windowstate{modeltype=\"ROOM\"}",
+          "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{room}}",
           "metric": "homematicip_heating_windowstate",
@@ -436,14 +455,17 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1174",
+          "decimals": 0,
           "format": "short",
           "label": null,
           "logBase": 1,
-          "max": null,
+          "max": "1",
           "min": null,
           "show": true
         },
         {
+          "$$hashKey": "object:1175",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -499,5 +521,5 @@
   "timezone": "browser",
   "title": "Heating",
   "uid": "000000005",
-  "version": 9
+  "version": 12
 }
