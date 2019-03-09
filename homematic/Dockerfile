@@ -6,7 +6,7 @@ RUN git clone https://github.com/johanneswuerbach/PrometheusSmartHome.git /usr/s
 
 WORKDIR /usr/src/app
 
-RUN git checkout patch-1
+RUN git checkout invalid-auth
 
 RUN pip install --no-cache-dir -r requirements.txt
 
