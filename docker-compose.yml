@@ -2,14 +2,14 @@ version: '3'
 
 services:
   prometheus:
-    image: prom/prometheus:v2.10.0
+    image: prom/prometheus:v2.23.0
     ports:
     - "9090:9090"
     volumes:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml
     - prom-data:/prometheus
   node-exporter:
-    image: prom/node-exporter:v0.18.1
+    image: prom/node-exporter:v1.0.1
     expose:
     - "9100"
     volumes:
@@ -25,7 +25,7 @@ services:
     - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
     - --collector.systemd
   grafana:
-    image: grafana/grafana:6.2.2
+    image: grafana/grafana:7.3.6
     volumes:
     - grafana-data:/var/lib/grafana
     - ./grafana/dashboards:/var/lib/grafana/dashboards
